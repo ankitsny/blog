@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
+
+import NavBar from './components/NavBar/navbar';
+
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       react: 'REACT',
     };
@@ -13,20 +16,11 @@ class App extends Component {
   render() {
     const { react } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <p>
-          Hello World&nbsp;
-          {react}
-        </p>
+      <div className="fluid-container">
+        <NavBar />
+        <footer>
+          <p>{react}</p>
+        </footer>
       </div>
     );
   }
